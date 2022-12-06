@@ -13,15 +13,17 @@ output reg [7:0] data_out;
 
 
 always@(posedge clk)
-begin
-  if(write)
-    begin
-      mem[addres]=data_in;
-   end
- if(read) 
- begin
- data_out=mem[addres];
- end
 
-end
+  if(write)
+    
+      mem[addres]=data_in;
+    
+always@(posedge clk)
+   if(read) 
+      data_out=mem[addres];
+    else 
+      data_out=mem[addres];
+ 
+
+
 endmodule
